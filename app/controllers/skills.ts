@@ -3,8 +3,8 @@ import config = require("../config");
 const Joi = require("joi");
 
 exports.insertSkill = function(req, res) {
-  config.getTokenData(req).then((res: any) => {
-    const userId = res.id;
+  config.getTokenData(req).then((token: any) => {
+    const userId = token.id;
     const skill = req.body;
     const result = validateSkill(skill);
     if (result.error !== null) {
@@ -30,8 +30,9 @@ exports.insertSkill = function(req, res) {
 };
 
 exports.updateSkill = function(req, res) {
-  config.getTokenData(req).then((res: any) => {
-    const userId = res.id;
+  config.getTokenData(req).then((token: any) => {
+    console.log(token);
+    const userId = token.id;
     const skillId = req.params.skillId;
     const skill = req.body;
     const result = validateSkill(skill);
@@ -64,8 +65,8 @@ exports.updateSkill = function(req, res) {
 };
 
 exports.deleteSkill = function(req, res) {
-  config.getTokenData(req).then((res: any) => {
-    const userId = res.id;
+  config.getTokenData(req).then((token: any) => {
+    const userId = token.id;
     const skillId = req.params.skillId;
     User.update(
       { _id: userId },
