@@ -2,14 +2,14 @@ import User from "../models/user";
 import config = require("../config");
 const Joi = require("joi");
 
-exports.insertSkill = function(req, res) {
+exports.insertSkill = function(req: any, res: any) {
   config.getTokenData(req).then((token: any) => {
     const userId = token.id;
     const skill = req.body;
     const result = validateSkill(skill);
     if (result.error !== null) {
       const errors: any = [];
-      result.error.details.forEach(elem => {
+      result.error.details.forEach((elem: any) => {
         errors.push(elem.message);
       });
       res.status(400).end(errors.toString());
@@ -18,27 +18,26 @@ exports.insertSkill = function(req, res) {
     User.updateOne(
       { _id: userId },
       { $push: { skills: skill } },
-      (err, elem) => {
+      (err: any, elem: any) => {
         if (err)
           return res.status(500).send({ message: "Error en la petición" });
         if (!elem)
-          return res.status(404).send({ message: "Usuario no encontrado." });
+          return res.status(404).send({ message: "Elemento no encontrado." });
         res.status(200).send(elem);
       }
     );
   });
 };
 
-exports.updateSkill = function(req, res) {
+exports.updateSkill = function(req: any, res: any) {
   config.getTokenData(req).then((token: any) => {
-    console.log(token);
     const userId = token.id;
     const skillId = req.params.skillId;
     const skill = req.body;
     const result = validateSkill(skill);
     if (result.error !== null) {
       const errors: any = [];
-      result.error.details.forEach(elem => {
+      result.error.details.forEach((elem: any) => {
         errors.push(elem.message);
       });
       res.status(400).end(errors.toString());
@@ -51,31 +50,29 @@ exports.updateSkill = function(req, res) {
           "skills.$": skill
         }
       },
-      (err, elem) => {
-        console.log("elem", elem);
-        console.log("skill", skill);
+      (err: any, elem: any) => {
         if (err)
           return res.status(500).send({ message: "Error en la petición" });
         if (!elem)
-          return res.status(404).send({ message: "Usuario no encontrado." });
+          return res.status(404).send({ message: "Elemento no encontrado." });
         res.status(200).send(elem);
       }
     );
   });
 };
 
-exports.deleteSkill = function(req, res) {
+exports.deleteSkill = function(req: any, res: any) {
   config.getTokenData(req).then((token: any) => {
     const userId = token.id;
     const skillId = req.params.skillId;
     User.update(
       { _id: userId },
       { $pull: { skills: { _id: skillId } } },
-      (err, elem) => {
+      (err: any, elem: any) => {
         if (err)
           return res.status(500).send({ message: "Error en la petición" });
         if (!elem)
-          return res.status(404).send({ message: "Usuario no encontrado." });
+          return res.status(404).send({ message: "Elemento no encontrado." });
         res.status(200).send(elem);
       }
     );

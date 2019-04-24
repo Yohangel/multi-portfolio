@@ -4,12 +4,12 @@ import jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 
-exports.getUser = function(req, res) {
+exports.getUser = function(req: any, res: any) {
   const u = req.params.user;
   User.findOne(
     { username: u },
     "enabled profile projects skills -_id",
-    (err, user) => {
+    (err: any, user: any) => {
       if (err) return res.status(500).send({ message: "Error en la petición" });
       if (!user)
         return res.status(404).send({ message: "El usuario no existe" });
@@ -18,24 +18,23 @@ exports.getUser = function(req, res) {
   );
 };
 
-exports.createUser = function(req, res) {
+exports.createUser = function(req: any, res: any) {
   const user = req.body;
   const result = validateUser(user);
   if (result.error !== null) {
     const errors: any = [];
-    result.error.details.forEach(elem => {
+    result.error.details.forEach((elem: any) => {
       errors.push(elem.message);
     });
     res.status(400).end(errors.toString());
     return;
   }
-  bcrypt.hash(user.password, 10, (err, hash) => {
+  bcrypt.hash(user.password, 10, (err: any, hash: any) => {
     if (err) {
-      console.log(err);
       return res.send(500, err);
     }
     user.password = hash;
-    User.create(user, (err, resp) => {
+    User.create(user, (err: any, resp: any) => {
       if (err) {
         return res.send(500, err);
       }
@@ -44,21 +43,21 @@ exports.createUser = function(req, res) {
   });
 };
 
-exports.loginUser = function(req, res) {
+exports.loginUser = function(req: any, res: any) {
   const u = req.body;
   const result = validateUserLogin(u);
   if (result.error !== null) {
     const errors: any = [];
-    result.error.details.forEach(elem => {
+    result.error.details.forEach((elem: any) => {
       errors.push(elem.message);
     });
     res.status(400).end(errors.toString());
     return;
   }
-  User.findOne({ username: u.username }, (err, user) => {
+  User.findOne({ username: u.username }, (err: any, user: any) => {
     if (err) return res.status(500).send({ message: "Error en la petición" });
     if (!user) return res.status(404).send({ message: "El usuario no existe" });
-    !bcrypt.compare(u.password, user.password).then(passCheck => {
+    !bcrypt.compare(u.password, user.password).then((passCheck: any) => {
       if (!passCheck)
         return res.status(400).send({
           message:

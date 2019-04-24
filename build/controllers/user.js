@@ -31,7 +31,6 @@ exports.createUser = function (req, res) {
     }
     bcrypt.hash(user.password, 10, function (err, hash) {
         if (err) {
-            console.log(err);
             return res.send(500, err);
         }
         user.password = hash;

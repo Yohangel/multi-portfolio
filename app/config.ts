@@ -27,18 +27,18 @@ function initDb() {
   return response;
 }
 
-function getTokenData(req) {
+function getTokenData(req: any) {
   return new Promise((resolve, reject) => {
     const token = getToken(req);
     if (!token) reject(false);
-    jwt.verify(token, data.SECRET, function(err, decoded) {
+    jwt.verify(token, data.SECRET, function(err: any, decoded: any) {
       if (err) return reject(false);
       resolve(decoded);
     });
   });
 }
 
-const getToken = function fromHeaderOrQuerystring(req) {
+const getToken = function fromHeaderOrQuerystring(req: any) {
   if (
     req.headers.authorization &&
     req.headers.authorization.split(" ")[0] === "Bearer"

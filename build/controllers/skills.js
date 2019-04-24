@@ -23,14 +23,13 @@ exports.insertSkill = function (req, res) {
             if (err)
                 return res.status(500).send({ message: "Error en la petición" });
             if (!elem)
-                return res.status(404).send({ message: "Usuario no encontrado." });
+                return res.status(404).send({ message: "Elemento no encontrado." });
             res.status(200).send(elem);
         });
     });
 };
 exports.updateSkill = function (req, res) {
     config.getTokenData(req).then(function (token) {
-        console.log(token);
         var userId = token.id;
         var skillId = req.params.skillId;
         var skill = req.body;
@@ -48,12 +47,10 @@ exports.updateSkill = function (req, res) {
                 "skills.$": skill
             }
         }, function (err, elem) {
-            console.log("elem", elem);
-            console.log("skill", skill);
             if (err)
                 return res.status(500).send({ message: "Error en la petición" });
             if (!elem)
-                return res.status(404).send({ message: "Usuario no encontrado." });
+                return res.status(404).send({ message: "Elemento no encontrado." });
             res.status(200).send(elem);
         });
     });
@@ -66,7 +63,7 @@ exports.deleteSkill = function (req, res) {
             if (err)
                 return res.status(500).send({ message: "Error en la petición" });
             if (!elem)
-                return res.status(404).send({ message: "Usuario no encontrado." });
+                return res.status(404).send({ message: "Elemento no encontrado." });
             res.status(200).send(elem);
         });
     });

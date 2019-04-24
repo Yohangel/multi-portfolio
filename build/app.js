@@ -6,6 +6,8 @@ var expressJwt = require("express-jwt");
 var config = require("./config");
 var users = require("./routes/users");
 var skills = require("./routes/skills");
+var projects = require("./routes/projects");
+var profile = require("./routes/profile");
 var app = express();
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -16,6 +18,8 @@ app.use(function (err, req, res, next) {
 });
 app.use(config.data.URL + "/users", users.router);
 app.use(config.data.URL + "/skills", expressJwt({ secret: config.data.SECRET }), skills.router);
+app.use(config.data.URL + "/projects", expressJwt({ secret: config.data.SECRET }), projects.router);
+app.use(config.data.URL + "/profile", expressJwt({ secret: config.data.SECRET }), profile.router);
 config.initDb();
 app.listen(config.data.PORT, function () {
     console.log("Servidor iniciado en el puerto " + config.data.PORT);

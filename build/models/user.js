@@ -36,11 +36,10 @@ var UserSchema = new mongoose.Schema({
             description: String,
             demo: String,
             download: String,
-            images: [
-                {
-                    image: String
-                }
-            ]
+            image_one: String,
+            image_two: String,
+            image_tree: String,
+            image_four: String
         }
     ],
     skills: [
@@ -60,9 +59,9 @@ var UserSchema = new mongoose.Schema({
         {
             avatar: String,
             bio: String,
+            website: String,
             linkedin: String,
             facebook: String,
-            behance: String,
             twitter: String,
             instagram: String
         }
