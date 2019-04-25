@@ -22,7 +22,8 @@ const data = {
 
 function initDb() {
   var mongoose = require("mongoose");
-  const DB = "mongodb://localhost:27017/portfolio";
+  const DB =
+    "mongodb://ad1m:xd8zvq7b4E4ZX4b@ds147436.mlab.com:47436/heroku_9f5227q3";
   let response = false;
 
   mongoose.connect(DB, {
