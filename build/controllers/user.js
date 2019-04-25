@@ -31,14 +31,14 @@ exports.createUser = function (req, res) {
     }
     bcrypt.hash(user.password, 10, function (err, hash) {
         if (err) {
-            return res.send(500, err);
+            return res.status(500).send(err);
         }
         user.password = hash;
         user_1.default.create(user, function (err, resp) {
             if (err) {
-                return res.send(500, err);
+                return res.status(500).send(err);
             }
-            return res.send(200, resp);
+            return res.status(200).send(resp);
         });
     });
 };
