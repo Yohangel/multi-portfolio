@@ -59,7 +59,7 @@ exports.deleteProject = function (req, res) {
     config.getTokenData(req).then(function (token) {
         var userId = token.id;
         var projectId = req.params.projectId;
-        user_1.default.update({ _id: userId }, { $pull: { projects: { _id: projectId } } }, function (err, elem) {
+        user_1.default.updateOne({ _id: userId }, { $pull: { projects: { _id: projectId } } }, function (err, elem) {
             if (err)
                 return res.status(500).send({ message: "Error en la petición" });
             if (!elem)
@@ -79,7 +79,7 @@ function validateProject(project) {
         download: Joi.string(),
         image_one: Joi.string(),
         image_two: Joi.string(),
-        image_tree: Joi.string(),
+        image_three: Joi.string(),
         image_four: Joi.string()
     });
     return Joi.validate(project, schema);

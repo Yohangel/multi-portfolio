@@ -59,7 +59,7 @@ exports.deleteSkill = function (req, res) {
     config.getTokenData(req).then(function (token) {
         var userId = token.id;
         var skillId = req.params.skillId;
-        user_1.default.update({ _id: userId }, { $pull: { skills: { _id: skillId } } }, function (err, elem) {
+        user_1.default.updateOne({ _id: userId }, { $pull: { skills: { _id: skillId } } }, function (err, elem) {
             if (err)
                 return res.status(500).send({ message: "Error en la petición" });
             if (!elem)

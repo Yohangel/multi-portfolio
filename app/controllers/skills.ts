@@ -65,7 +65,7 @@ exports.deleteSkill = function(req: any, res: any) {
   config.getTokenData(req).then((token: any) => {
     const userId = token.id;
     const skillId = req.params.skillId;
-    User.update(
+    User.updateOne(
       { _id: userId },
       { $pull: { skills: { _id: skillId } } },
       (err: any, elem: any) => {

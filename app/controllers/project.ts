@@ -65,7 +65,7 @@ exports.deleteProject = function(req: any, res: any) {
   config.getTokenData(req).then((token: any) => {
     const userId = token.id;
     const projectId = req.params.projectId;
-    User.update(
+    User.updateOne(
       { _id: userId },
       { $pull: { projects: { _id: projectId } } },
       (err: any, elem: any) => {
@@ -90,7 +90,7 @@ function validateProject(project: any) {
     download: Joi.string(),
     image_one: Joi.string(),
     image_two: Joi.string(),
-    image_tree: Joi.string(),
+    image_three: Joi.string(),
     image_four: Joi.string()
   });
   return Joi.validate(project, schema);

@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
       download: String,
       image_one: String,
       image_two: String,
-      image_tree: String,
+      image_three: String,
       image_four: String
     }
   ],

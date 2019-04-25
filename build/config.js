@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var jwt = require("jsonwebtoken");
+var colors = require("colors");
+var serverMessage = {
+    INIT: "\n   _____         _   ___     _ _        _____     _ _   _                 \n  |  _  |___ ___| |_|  _|___| |_|___   |     |_ _| | |_|_|_ _ ___ ___ ___ \n  |   __| . |  _|  _|  _| . | | | . |  | | | | | | |  _| | | |_ -| -_|  _|\n  |__|  |___|_| |_| |_| |___|_|_|___|  |_|_|_|___|_|_| |_|___|___|___|_| v1.0 \n                                                                        \n  By: Yohangel Ramos\n  " // rectangles AsciiSignature
+};
+exports.serverMessage = serverMessage;
 var data = {
     PORT: 3000,
     URL: "/api",
@@ -20,10 +25,12 @@ function initDb() {
         useFindAndModify: false
     });
     var db = mongoose.connection;
-    db.on("error", console.error.bind(console, "connection error:"));
+    // @ts-ignore
+    db.on("error", console.error.bind(console, " error de conexión:".red));
     db.once("open", function () {
         response = true;
-        console.log("Connected to DB");
+        // @ts-ignore
+        console.log(" Conectado a la DB".green);
     });
     return response;
 }

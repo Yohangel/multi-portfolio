@@ -1,4 +1,16 @@
 import jwt = require("jsonwebtoken");
+const colors = require("colors");
+
+const serverMessage = {
+  INIT: `
+   _____         _   ___     _ _        _____     _ _   _                 
+  |  _  |___ ___| |_|  _|___| |_|___   |     |_ _| | |_|_|_ _ ___ ___ ___ 
+  |   __| . |  _|  _|  _| . | | | . |  | | | | | | |  _| | | |_ -| -_|  _|
+  |__|  |___|_| |_| |_| |___|_|_|___|  |_|_|_|___|_|_| |_|___|___|___|_| v1.0 
+                                                                        
+  By: Yohangel Ramos
+  ` // rectangles AsciiSignature
+};
 const data = {
   PORT: 3000,
   URL: "/api",
@@ -19,10 +31,12 @@ function initDb() {
     useFindAndModify: false
   });
   const db = mongoose.connection;
-  db.on("error", console.error.bind(console, "connection error:"));
+  // @ts-ignore
+  db.on("error", console.error.bind(console, " error de conexión:".red));
   db.once("open", function() {
     response = true;
-    console.log("Connected to DB");
+    // @ts-ignore
+    console.log(" Conectado a la DB".green);
   });
   return response;
 }
@@ -50,4 +64,4 @@ const getToken = function fromHeaderOrQuerystring(req: any) {
   return null;
 };
 
-export { data, initDb, getTokenData };
+export { data, initDb, getTokenData, serverMessage };

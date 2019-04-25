@@ -8,14 +8,10 @@ import skills = require("./routes/skills");
 import projects = require("./routes/projects");
 import profile = require("./routes/profile");
 const app: express.Application = express();
+const colors = require("colors");
 
 app.use(express.static("public"));
 app.use(bodyParser.json());
-app.use(function(err: any, req: any, res: any, next: any) {
-  if (err.name === "UnauthorizedError") {
-    res.status(401).send({ message: "Token invalido" });
-  }
-});
 
 app.use(`${config.data.URL}/users`, users.router);
 app.use(
@@ -36,8 +32,21 @@ app.use(
   profile.router
 );
 
+app.use(function(err: any, req: any, res: any, next: any) {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).send({ message: "Token invalido" });
+  }
+  res.status(500).send({
+    message:
+      " Ocurió un problema inesperado. Por favor intentalo de nuevo más tarde."
+  });
+});
+
 config.initDb();
 
 app.listen(config.data.PORT, () => {
-  console.log(`Servidor iniciado en el puerto ${config.data.PORT}`);
+  process.stdout.write("\x1Bc");
+  console.log(config.serverMessage.INIT);
+  // @ts-ignore
+  console.log(` Servidor iniciado en el puerto ${config.data.PORT}`.cyan);
 });
