@@ -12,7 +12,7 @@ const serverMessage = {
   ` // rectangles AsciiSignature
 };
 const data = {
-  PORT: 3000,
+  PORT: process.env.PORT || 5000,
   URL: "/api",
   SECRET: "th1s_notk3i_",
   TOKEN_OPTIONS: {

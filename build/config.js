@@ -7,17 +7,17 @@ var serverMessage = {
 };
 exports.serverMessage = serverMessage;
 var data = {
-    PORT: 3000,
+    PORT: process.env.PORT || 5000,
     URL: "/api",
     SECRET: "th1s_notk3i_",
     TOKEN_OPTIONS: {
-        expiresIn: 60 * 60 * 24 // expires in 24 hours
+        expiresIn: 60 * 60 * 24 // expires in 24 hour
     }
 };
 exports.data = data;
 function initDb() {
     var mongoose = require("mongoose");
-    var DB = "mongodb://localhost:27017/portfolio";
+    var DB = "mongodb://ad1m:xd8zvq7b4E4ZX4b@ds147436.mlab.com:47436/heroku_9f5227q3";
     var response = false;
     mongoose.connect(DB, {
         useNewUrlParser: true,
