@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.col {
+  width: 100%;
+}
+
+.col-1 {
+  max-width: 8.3333333333%;
+}
+
+.col-2 {
+  max-width: 16.6666666667%;
+}
+
+.col-3 {
+  max-width: 25%;
+}
+
+.col-4 {
+  max-width: 33.3333333333%;
+}
+
+.col-5 {
+  max-width: 41.6666666667%;
+}
+
+.col-6 {
+  max-width: 50%;
+}
+
+.col-7 {
+  max-width: 58.3333333333%;
+}
+
+.col-8 {
+  max-width: 66.6666666667%;
+}
+
+.col-9 {
+  max-width: 75%;
+}
+
+.col-10 {
+  max-width: 83.3333333333%;
+}
+
+.col-11 {
+  max-width: 91.6666666667%;
+}
+
+.col-12 {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .col-md-1 {
+    max-width: 8.3333333333%;
+  }
+
+  .col-md-2 {
+    max-width: 16.6666666667%;
+  }
+
+  .col-md-3 {
+    max-width: 25%;
+  }
+
+  .col-md-4 {
+    max-width: 33.3333333333%;
+  }
+
+  .col-md-5 {
+    max-width: 41.6666666667%;
+  }
+
+  .col-md-6 {
+    max-width: 50%;
+  }
+
+  .col-md-7 {
+    max-width: 58.3333333333%;
+  }
+
+  .col-md-8 {
+    max-width: 66.6666666667%;
+  }
+
+  .col-md-9 {
+    max-width: 75%;
+  }
+
+  .col-md-10 {
+    max-width: 83.3333333333%;
+  }
+
+  .col-md-11 {
+    max-width: 91.6666666667%;
+  }
+
+  .col-md-12 {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .col-lg-1 {
+    max-width: 8.3333333333%;
+  }
+
+  .col-lg-2 {
+    max-width: 16.6666666667%;
+  }
+
+  .col-lg-3 {
+    max-width: 25%;
+  }
+
+  .col-lg-4 {
+    max-width: 33.3333333333%;
+  }
+
+  .col-lg-5 {
+    max-width: 41.6666666667%;
+  }
+
+  .col-lg-6 {
+    max-width: 50%;
+  }
+
+  .col-lg-7 {
+    max-width: 58.3333333333%;
+  }
+
+  .col-lg-8 {
+    max-width: 66.6666666667%;
+  }
+
+  .col-lg-9 {
+    max-width: 75%;
+  }
+
+  .col-lg-10 {
+    max-width: 83.3333333333%;
+  }
+
+  .col-lg-11 {
+    max-width: 91.6666666667%;
+  }
+
+  .col-lg-12 {
+    max-width: 100%;
+  }
+}
+.p-5 {
+  border: solid 5px transparent;
+  box-sizing: border-box;
+}
+
+.p-10 {
+  border: solid 10px transparent;
+  box-sizing: border-box;
+}
+
+.p-15 {
+  border: solid 15px transparent;
+  box-sizing: border-box;
+}
+
+.p-20 {
+  border: solid 20px transparent;
+  box-sizing: border-box;
+}
+
+.p-25 {
+  border: solid 25px transparent;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+  .p-md-5 {
+    border: solid 5px transparent;
+    box-sizing: border-box;
+  }
+
+  .p-md-10 {
+    border: solid 10px transparent;
+    box-sizing: border-box;
+  }
+
+  .p-md-15 {
+    border: solid 15px transparent;
+    box-sizing: border-box;
+  }
+
+  .p-md-20 {
+    border: solid 20px transparent;
+    box-sizing: border-box;
+  }
+
+  .p-md-25 {
+    border: solid 25px transparent;
+    box-sizing: border-box;
+  }
+}
+/*
+    SimpleCSS fast simple and light framework
+    Author: Yohangel Ramos
+    Github: http://github.com/yohangel
+*/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ecf0f1;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar {
+  background: #fff;
+  height: 70px;
+  box-shadow: 0px 1px 10px 4px rgba(100, 100, 100, 0.1);
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4vw;
+  align-items: center;
+}
+.navbar .logo {
+  font-size: 28px;
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.navbar .menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.navbar .menu li {
+  float: left;
+}
+.navbar .menu li a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  color: #40407a;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: transform 0.1s ease-in-out;
+}
+.navbar .menu li a:hover {
+  transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+}
+.navbar .menu .separator {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.navbar .menu .special a {
+  color: #34ace0;
+}
+
+.cover {
+  width: 100%;
+  height: 360px;
+  background-image: url("./img/cover.png");
+  background-repeat: repeat-x;
+}
+
+.container {
+  margin-top: -180px;
+}
+
+.avatar {
+  text-align: center;
+}
+.avatar img {
+  background-image: url("./img/avatar.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 100%;
+  border: 4px solid #ffffff;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.avatar .title {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 4px solid #ffffff;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 30px;
+}
+.categories li {
+  float: left;
+}
+.categories li a {
+  background: #fff;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #40407a;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+  margin-left: 10px;
+}
+.categories li a:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.categories .separator {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.categories .special a {
+  color: #34ace0;
+}
+
+.gallery {
+  margin-top: 20px;
+  text-align: center;
+}
+.gallery img {
+  width: 24%;
+}
+
+.profile {
+  background: #fff;
+  border: 4px solid #ffffff;
+  margin-top: 15px !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.profile .message {
+  margin-top: 0;
+  font-size: 14px;
+}
+.profile .list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.profile .list li {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.skills {
+  background: #fff;
+  border: 4px solid #ffffff;
+  margin-top: 15px !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.skills .title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e3e8ea;
+}
+.skills .list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.skills .list li {
+  height: 20px;
+  margin-bottom: 10px;
+}
+.skills progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+}
+.skills .progress-text {
+  position: relative;
+  top: -24px;
+  color: #000;
+  font-size: 12px;
+  left: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.skills progress[value]::-webkit-progress-bar {
+  border-radius: 5px;
+  background-color: #ecf0f1;
+}
+.skills progress[value]::-webkit-progress-value {
+  border-radius: 10px;
+  background-color: #9cc9e6;
+}
+
+@media only screen and (min-width: 768px) {
+  .categories {
+    margin-top: 130px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

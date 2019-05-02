@@ -38,7 +38,7 @@ exports.createUser = function(req: any, res: any) {
       if (err) {
         return res.status(500).send(err);
       }
-      return res.status(200).send(resp);
+      return res.status(200).send({ message: "ok" });
     });
   });
 };

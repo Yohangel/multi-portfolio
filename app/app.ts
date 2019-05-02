@@ -6,11 +6,12 @@ import users = require("./routes/users");
 import skills = require("./routes/skills");
 import projects = require("./routes/projects");
 import profile = require("./routes/profile");
+const cors = require("cors");
 const path = require("path");
 const app: express.Application = express();
 const colors = require("colors");
 app.use(bodyParser.json());
-
+app.use(cors());
 app.use(`${config.data.URL}/users`, users.router);
 app.use(
   `${config.data.URL}/skills`,

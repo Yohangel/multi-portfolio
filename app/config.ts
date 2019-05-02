@@ -16,7 +16,7 @@ const data = {
   URL: "/api",
   SECRET: "th1s_notk3i_",
   TOKEN_OPTIONS: {
-    expiresIn: 60 * 60 * 24 // expires in 24 hour
+    expiresIn: 1 // expires in 24 hour
   }
 };
 
@@ -48,6 +48,7 @@ function getTokenData(req: any) {
     if (!token) reject(false);
     jwt.verify(token, data.SECRET, function(err: any, decoded: any) {
       if (err) return reject(false);
+      console.log(decoded);
       resolve(decoded);
     });
   });
