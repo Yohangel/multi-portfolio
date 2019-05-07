@@ -372,7 +372,6 @@ body {
     box-sizing: border-box;
     border-radius: 8px;
     cursor: pointer;
-    position: relative;
 
     &:hover {
         filter: brightness(0.65) contrast(0.98) grayscale(0.38);
@@ -384,7 +383,8 @@ body {
         margin-top: -50%;
     }
 
-    .grid-item {
+    .grid-item,
+    .grid-sizer {
         width: 25%;
     }
 
