@@ -549,6 +549,10 @@ body {
 }
 
 .grid-item {
+  float: left;
+}
+.grid-item img {
+  display: block;
   padding: 0.1rem;
   width: 100%;
   box-sizing: border-box;
@@ -557,6 +561,11 @@ body {
 }
 .grid-item:hover {
   filter: brightness(0.65) contrast(0.98) grayscale(0.38);
+}
+
+.grid-item,
+.grid-sizer {
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
