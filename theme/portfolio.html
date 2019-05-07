@@ -88,10 +88,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col grid" data-masonry='{ 
-                        "itemSelector": ".grid-item", 
-                        "percentPosition": true, 
-                        "columnWidth": ".grid-sizer"}'>
+                    <div class="col grid">
                         <div class="grid-sizer"></div>
                         <div class="grid-item">
                             <img src="img/img1.jpg" alt="">
@@ -125,6 +122,19 @@
             </div>
         </div>
     </div>
+    <script>
+        var elem = document.querySelector('.grid');
+        var iso = new Isotope(elem, {
+            // options
+            itemSelector: '.grid-item'
+        });
+
+        // element argument can be a selector string
+        // for an individual element
+        var iso = new Isotope('.grid', {
+            // options
+        });
+    </script>
 </body>
 
 </html>
