@@ -548,6 +548,12 @@ body {
   margin: 2vw;
 }
 
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .grid-item {
   float: left;
 }
