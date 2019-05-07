@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col grid">
+                    <div class="col grid" data-masonry='{ "itemSelector": ".grid-item"}'>
                         <img src="img/img1.jpg" class="grid-item" alt="">
                         <img src="img/img2.jpg" class="grid-item" alt="">
                         <img src="img/img3.jpg" class="grid-item" alt="">
@@ -107,12 +107,6 @@
             </div>
         </div>
     </div>
-    <script>
-        var grid = document.querySelector('.grid');
-        var msnry = new Masonry(grid, {
-            itemSelector: '.grid-item'
-        });
-    </script>
 </body>
 
 </html>
