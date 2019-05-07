@@ -8,11 +8,14 @@
     <title>BoomArt</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" type="text/css" href="./font/flaticon.css">
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 </head>
 
 <body>
     <div class="navbar">
         <div class="logo">BoomArt <span class="slogan">explosión creativa</span></div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
             <li><a href="">Inicio</a></li>
             <li><a href="">explorar</a></li>
@@ -68,36 +71,51 @@
             </div>
             <div class="col col-md-9">
                 <div class="row">
-                    <div class="col">
-                        <ul class="categories">
-                            <li><a href="">Photoshop</a></li>
-                            <li><a href="">Photoshop</a></li>
-                            <li><a href="">Photoshop</a></li>
-                            <li><a href="">Photoshop</a></li>
-                            <li><a href="">Photoshop</a></li>
-                        </ul>
+                    <div class="col gallery--order">
+                        <span class="option" onclick="void(0)">
+                            <b>Categoría:</b> Ver todos ▼
+                            <div class="option:dropdown">
+                                <a>PHotoshop</a>
+                                <a>illustrator</a>
+                                <a>indesign</a>
+                            </div>
+                        </span>
+                        <span class="option" onclick="void(0)">
+                            <b>Ordenar por:</b> Fecha de publicación ▼
+                            <div class="option:dropdown">
+                                <a>Nombre</a>
+                            </div>
+                        </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col gallery">
-                        <a href=""><img src="img/img1.jpg" alt=""></a>
-                        <a href=""><img src="img/img2.jpg" alt=""></a>
-                        <a href=""><img src="img/img3.jpg" alt=""></a>
-                        <a href=""><img src="img/img4.jpg" alt=""></a>
-                        <a href=""><img src="img/img2.jpg" alt=""></a>
-                        <a href=""><img src="img/img1.jpg" alt=""></a>
-                        <a href=""><img src="img/img4.jpg" alt=""></a>
-                        <a href=""><img src="img/img2.jpg" alt=""></a>
-                        <a href=""><img src="img/img1.jpg" alt=""></a>
-                        <a href=""><img src="img/img4.jpg" alt=""></a>
-                        <a href=""><img src="img/img2.jpg" alt=""></a>
-                        <a href=""><img src="img/img1.jpg" alt=""></a>
-                        <a href=""><img src="img/img4.jpg" alt=""></a>
+                    <div class="col grid">
+                        <img src="img/img1.jpg" class="grid-item" alt="">
+                        <img src="img/img2.jpg" class="grid-item" alt="">
+                        <img src="img/img3.jpg" class="grid-item" alt="">
+                        <img src="img/img4.jpg" class="grid-item" alt="">
+                        <img src="img/img2.jpg" class="grid-item" alt="">
+                        <img src="img/img1.jpg" class="grid-item" alt="">
+                        <img src="img/img4.jpg" class="grid-item" alt="">
+                        <img src="img/img2.jpg" class="grid-item" alt="">
+                        <img src="img/img1.jpg" class="grid-item" alt="">
+                        <img src="img/img4.jpg" class="grid-item" alt="">
+                        <img src="img/img2.jpg" class="grid-item" alt="">
+                        <img src="img/img1.jpg" class="grid-item" alt="">
+                        <img src="img/img4.jpg" class="grid-item" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        // vanilla JS
+        // init with element
+        var grid = document.querySelector('.grid');
+        var msnry = new Masonry(grid, {
+            itemSelector: '.grid-item'
+        });
+    </script>
 </body>
 
 </html>
