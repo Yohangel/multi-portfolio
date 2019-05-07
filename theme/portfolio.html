@@ -108,10 +108,12 @@
         </div>
     </div>
     <script>
-        var grid = document.querySelector('.grid');
-        var msnry = new Masonry(grid, {
-            itemSelector: '.grid-item'
-        });
+        if (typeof window.orientation == 'undefined') {
+            var grid = document.querySelector('.grid');
+            var msnry = new Masonry(grid, {
+                itemSelector: '.grid-item'
+            });
+        }
     </script>
 </body>
 
