@@ -412,11 +412,15 @@ body {
 
 @media only screen and (max-width: 767px) {
 
-    .gallery--order .option {
-        width: 100%;
+    .option {
         display: block;
-        margin: 4vw 0;
-        margin-left: 0;
+        margin: 10px;
+
+        &\:dropdown {
+            transform: scale(1) !important;
+            display: block !important;
+            position: relative !important;
+        }
     }
 
     .avatar img,
