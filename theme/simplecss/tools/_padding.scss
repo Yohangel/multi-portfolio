@@ -1,0 +1,16 @@
+@for $i from 1 through 5 {
+    .p-#{$i*5} {
+        border: solid #{$i*5}px transparent;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    @for $i from 1 through 5 {
+        .p-md-#{$i*5} {
+            border: solid #{$i*5}px transparent;
+            box-sizing: border-box;
+        }
+    }
+}
