@@ -242,6 +242,32 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.logo {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 28px;
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.logo .slogan {
+  display: block;
+  font-size: 11px;
+}
+
+.login {
+  background: #ffffffbd;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .navbar {
   background: #fff;
   min-height: 70px;
@@ -252,18 +278,6 @@ body {
   width: 100%;
   box-sizing: border-box;
   /* menu btn */
-}
-.navbar .logo {
-  display: inline-block;
-  cursor: default;
-  font-size: 28px;
-  color: #2c3e50;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.navbar .logo .slogan {
-  display: block;
-  font-size: 11px;
 }
 .navbar .menu {
   list-style-type: none;

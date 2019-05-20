@@ -7,6 +7,33 @@ body {
         sans-serif;
 }
 
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.logo {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 28px;
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    .slogan {
+        display: block;
+        font-size: 11px;
+    }
+}
+
+.login {
+    background: #ffffffbd;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .navbar {
     background: #fff;
     min-height: 70px;
@@ -16,20 +43,6 @@ body {
     position: fixed;
     width: 100%;
     box-sizing: border-box;
-
-    .logo {
-        display: inline-block;
-        cursor: default;
-        font-size: 28px;
-        color: #2c3e50;
-        text-transform: uppercase;
-        font-weight: bold;
-
-        .slogan {
-            display: block;
-            font-size: 11px;
-        }
-    }
 
     .menu {
         list-style-type: none;
